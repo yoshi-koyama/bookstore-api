@@ -17,7 +17,7 @@ func main() {
 	bookHandler := handler.NewBookHandler(bookUseCase)
 
 	r.Get("/hello", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("hello world, yoshi!"))
+		w.Write([]byte("hello world"))
 	})
 	r.Route("/bookstore/api", func(r chi.Router) {
 		r.Post("/checkouts", bookHandler.Checkout)
